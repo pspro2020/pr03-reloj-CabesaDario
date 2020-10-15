@@ -8,6 +8,8 @@ public class Main {
         thread.start();
         TimeUnit.SECONDS.sleep(12);
         thread.interrupt();
+        // Te ha faltado esperar a que el hilo secundario termine de ejecutarse.
+        thread.join();
         System.out.println("El hilo secundario ha terminado de ejecutarse");
     }
 }
