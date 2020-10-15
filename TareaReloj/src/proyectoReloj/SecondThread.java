@@ -11,11 +11,13 @@ public class SecondThread implements Runnable{
 
     @Override
     public void run() {
-        LocalDateTime nextHour=LocalDateTime.of(LocalDateTime.now().getYear(),LocalDateTime.now().getMonth(),
-        LocalDateTime.now().getDayOfMonth(),LocalDateTime.now().getHour()+1,0,0,0);
-        int condition = nextHour.getHour();while (!Thread.currentThread().isInterrupted()) {
-
-            while(LocalDateTime.now().getHour() < condition && !Thread.currentThread().isInterrupted()) {
+        // La variable nextHour no entiendo para qué la usas.
+        // LocalDateTime nextHour=LocalDateTime.of(LocalDateTime.now().getYear(),LocalDateTime.now().getMonth(),
+        // LocalDateTime.now().getDayOfMonth(),LocalDateTime.now().getHour()+1,0,0,0);
+        //int condition = nextHour.getHour();
+        while (!Thread.currentThread().isInterrupted()) {
+            // Este bucle while interno no entiendo para qué está.
+            // while(LocalDateTime.now().getHour() < condition && !Thread.currentThread().isInterrupted()) {
                 System.out.println(LocalDateTime.now().format(dateTimeFormatter));
                 try {
                     TimeUnit.SECONDS.sleep(1);
@@ -23,7 +25,7 @@ public class SecondThread implements Runnable{
                     return;
                 }
 
-            }
+            // }
 
         }
 
